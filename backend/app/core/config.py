@@ -13,6 +13,9 @@ class Settings(BaseSettings):
     environment: str = "development"
     database_url: str = "postgresql+psycopg://sentinel:change_me@localhost:5433/sentineliq"
 
+    mongo_url: str = "mongodb://sentinel:change_me@localhost:27017/?authSource=admin"
+    mongo_db: str = "sentineliq"
+
     secret_key: str = DEV_SECRET
     jwt_algorithm: str = "HS256"
     access_token_expire_minutes: int = 30
