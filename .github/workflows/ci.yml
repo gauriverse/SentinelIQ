@@ -18,6 +18,15 @@ jobs:
           --health-interval 5s
           --health-timeout 5s
           --health-retries 10
+          simulator:
+      runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pytest
+      - run: python -m pytest simulator/tests -q
     env:
     MONGO_URL: mongodb://localhost:27017
     defaults:
